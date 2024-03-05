@@ -1,0 +1,337 @@
+:root {
+  padding: 30px;
+  border-radius: 5%;
+  background: url('./assets//backgroundImages/img6.webp'); 
+   background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: multiply;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  min-width: 220px;
+  min-height: 100vh;
+  /* background-color: rgba(255, 255, 255,0.5); */
+  padding: 10px;
+  margin-right: 40px;
+  border-radius:2%;
+  /* box-shadow: 0 0  7px rgba(255, 228, 255,0.5); */
+  /* border: 1px solid rgb(0, 144, 228); */
+
+}
+body .weather{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  height:100%;
+  width: 97vw;
+  min-width: 180px;
+  max-width: 95%;
+  background-color: rgba(255,255,255,0.3);
+  box-shadow: 0 0 7px blue;
+  border: 1px solid white;
+  padding: 4px 8px;
+  border-radius: 5px;
+  margin-top: 0;
+  gap: 5px;
+}
+
+
+
+.header{
+  top: 5px;
+  width: 80vw;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content:space-around;
+  padding:15px;
+}
+.header {
+  margin-top: 0px;
+}
+.header h1{
+  color: blue;
+  padding-bottom: 5px;
+  margin-top: 0px;
+}
+.header  h1 .location-icon{
+  color: blue;
+  box-shadow: 0 0 20px blue;
+  border: none;
+  outline: none;
+  border-radius: 100%;
+  padding: 3px;
+  font-size: 38px;
+  overflow: hidden;
+
+  
+}
+
+.header .sun-icon{
+
+  color: rgb(237, 169, 21);
+  font-size: 50px;
+  text-decoration: dotted;
+  font-family: 'Times New Roman', Times, serif;
+  animation: rotateSun 7s infinite;
+  text-shadow:#1a1a1a; 
+  padding-left: 20px;
+}
+
+.header .temp{
+  background-color:blue;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+   color: white;
+   display: flex;
+   justify-content: space-around;
+   /* flex-wrap: wrap; */
+  /* border: 2px solid white; */
+   flex-direction: row;
+   box-shadow: 0 0 7px blue;
+   border-radius: 3%;
+   padding: 5px 10px;
+   animation: rotateBox 5s infinite;
+   transition: 0.5s ease ease-in-out;
+  margin-bottom: 0;
+  margin-top: 0;
+ }
+ .temp div{
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: blue;
+  padding-left: 4px;
+ }
+ .temp div h1{
+  font-size: 60px;
+ margin: 0px 2px;
+ color: white;
+ }
+ .temp div h6{
+   margin: 0px;
+  padding-left: 1px;
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+ }
+ .header .temp .img{
+  justify-content: flex-end;
+  width: 100px;
+  height: 120px;
+  background-color:blue;
+  padding: 2px;
+  border-radius: 100%;
+}
+@keyframes rotateBox{
+  from{
+   transform: translateY(-20%);
+  
+  }
+  to{
+ transform :translateY(20);
+  
+  }
+}
+ .weather .details{
+  width: 82vw;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  font-weight: bold;
+  background-color: blue; 
+  border-radius: 5px;
+  box-shadow: 0 0 7px blue;
+  padding: 5px 8px;
+  /* border: 2px solid white; */
+
+
+}
+.details div{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.details div .sun-rise{
+  color: rgb(241, 5, 5);
+  background-color: skyblue;
+  padding: 2px 4px;
+  border-radius: 100%;
+  font-size: 35px;
+  border: 2px solid white;
+  
+ 
+}
+.details div .sun-set{
+  color: rgb(241, 5, 5);
+  background-color: skyblue;
+  padding: 2px 4px;
+  border-radius: 100%;
+  font-size: 35px;
+  border: 2px solid white;
+  margin-left: 23px;
+}
+.details div h4{
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  margin: 0px;
+}
+.details div h3{
+  margin: 0px;
+  font-weight: bold;
+  color: white;
+}
+ 
+ .cart-details{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  overflow: hidden;
+  height:100%;
+  width: 97vw;
+  min-width: 180px;
+  max-width: 95%;
+  gap: 10px;
+  padding: 3px 6px;
+}
+.cart-details div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  box-shadow: 0 0 7px blue;
+  /* background-color: rgba(255,255,255,0.2); */
+  border-radius: 5px;
+  /* box-shadow: 0 0 7 #ffffff; */
+  
+}
+.cart-details div h2{
+  font-weight: bold;
+  font-style: italic;
+  color: blue;
+
+}
+ .more-details{
+  display: flex;
+  justify-content: flex-start;
+  margin: 5px;
+  padding: 5px;
+}
+.more-details button{
+  color: blue;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 5px 7px;
+  box-shadow: 0 0 20px blue;
+cursor: pointer;
+background-color: rgba(255,255,255,0.3);
+}
+.more-details button .nav-icon{
+  color: blue;
+  font-size: 25px;
+ border-radius: 2px;
+ cursor: pointer;
+}
+.more-details-list{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  height:100%;
+  width: 97vw;
+  min-width: 180px;
+  max-width: 95%;
+  background-color: rgba(255,255,255,0.3);
+  box-shadow: 0 0 7px blue;
+  border: 1px solid white;
+  padding: 4px 8px;
+  border-radius: 5px;
+  margin-top: 0;
+  gap: 5px;
+}
+.more-details-list ul{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  overflow: hidden;
+  height:100%;
+  width: 97vw;
+  min-width: 180px;
+  max-width: 95%;
+  gap: 10px;
+  padding: 3px 6px;
+}
+.more-details-list ul li{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-shadow: 0 0 7px blue;
+  border-radius: 5px;
+  padding: 2px 4px;
+}
+.more-details-list ul li div h4{
+  font-weight: bold;
+  font-style: italic;
+  color: blue;
+  padding: 3px 6px;
+  margin: 0px;
+}
+.more-details-list ul li div h1{
+  color: white;
+  font-weight: bold;
+  margin: 0px;
+}
+.more-details-list ul li img{
+  justify-content: flex-end;
+  width: 50px;
+  height: 50px;
+  background-color:rgba(8, 8, 235, 0.944);
+  padding: 2px;
+  border-radius: 100%;
+  border: 2px solid white;
+}
+p{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+p h1{
+  color: red;
+  font-weight: bold;
+  font-size: 35px;
+  font-family: 'Times New Roman', Times, serif;
+  font-style: italic;
+}
+p .location-off-icon{
+  font-size: 40px;
+  color: red;
+  padding: 20px;
+  background-color: rgb(56, 193, 214);
+  border-radius: 100%;
+  box-shadow: 0 0 20px white;
+  
+}

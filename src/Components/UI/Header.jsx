@@ -4,6 +4,7 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import FetchDataContext from '../../Store/FetchDataContext';
 import { APIKEY } from '../../../ApiKey';
 import React, {useContext} from 'react';
+import { motion } from 'framer-motion';
 
 const Header=()=>{
   const { data}= useContext(FetchDataContext);
@@ -24,10 +25,32 @@ const Header=()=>{
       
       <div className='temp'>
       <div>
-     <h1> {Math.round(temp)}°C</h1>
+     <motion.h2
+     initial={{scale:0}}
+     animate={{
+      scale:[0,0.3,0.5,0.7,0.9,1,1.001,1.01,1.1],
+      
+     }}
+     transition={{repeat:Infinity,duration:5,ease:'linear'}}
+     exit={{
+      scale: [1.001, 1, 0.5, 0],
+      transition: { duration: 5, ease: [0.42, 0, 0.58, 1] } // Custom cubic bezier curve
+    }}
+     > {Math.round(temp)}°C</motion.h2>
       <h6>{weatherDescription}</h6>
       </div>
-      <img src={`${APIKEY.weatherIconURL}${weatherIcon}@2x.png`} alt="weatherImage" />
+      <motion.img
+       initial={{scale:0}}
+       animate={{
+        scale:[0,0.3,0.5,0.7,0.9,1,1.001,1.01,1.1],
+        
+       }}
+       transition={{repeat:Infinity,duration:5,ease:'linear'}}
+       exit={{
+        scale: [1.001, 1, 0.5, 0],
+        transition: { duration: 5, ease: [0.42, 0, 0.58, 1] } // Custom cubic bezier curve
+      }}
+       src={`${APIKEY.weatherIconURL}${weatherIcon}@2x.png`} alt="weatherImg" />
 
       </div>
      

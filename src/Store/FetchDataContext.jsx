@@ -13,6 +13,7 @@ export function FetchDataProvider({children}){
     const[error,setError]=useState(null);
     const [loading,setLoading]=useState(false);
     const [forCastData,setForCastData]=useState([]);
+   
     function fetchLocation(){
         if(navigator.geolocation){
             navigator.geolocation.getCurrentPosition(onSuccess,onFail);
@@ -88,21 +89,21 @@ export function FetchDataProvider({children}){
     if(!res.ok){
         throw new Error('Error in fetching data ');
     }
-    const forcastData=await res.json();
-      setForCastData([
+     const forcastData=await res.json();
+          setForCastData([
         {
             id:0,
             temp:forcastData.list[0].main.temp,
             description:forcastData.list[0].weather[0].description,
             icon:forcastData.list[0].weather[0].icon,
-        
+                    
         },
         {
             id:1,
             temp:forcastData.list[1].main.temp,
             description:forcastData.list[1].weather[0].description,
             icon:forcastData.list[1].weather[0].icon,
-        
+
         },
         {
             id:2,
@@ -116,14 +117,14 @@ export function FetchDataProvider({children}){
             temp:forcastData.list[3].main.temp,
             description:forcastData.list[3].weather[0].description,
             icon:forcastData.list[3].weather[0].icon,
-        
+           
         },
         {
             id:4,
             temp:forcastData.list[4].main.temp,
             description:forcastData.list[4].weather[0].description,
             icon:forcastData.list[4].weather[0].icon,
-        
+         
         },
         
     ])
@@ -141,10 +142,39 @@ export function FetchDataProvider({children}){
         const s=currentTime.getSeconds();
         const ampm=h>12?'pm':'am';
         const hh=h>12?h-12:h;
-        // console.log(`${hh}:${m}:${s}:${ampm}`); 
-
         return `${hh}:${m}:${s}:${ampm} `
     }
+    // function GenerateDays(){
+    //     const currentTime=new Date();
+    //     const daysOfWeek=currentTime.getDay();
+    //     const days = ["Sunday", "Monday"," Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    // const dayName=days[daysOfWeek];
+    // switch(daysOfWeek){
+    // case 0:
+    // nextFiveDays=['Monday','Tuesday','Wednesday','Thursday','Friday'];
+    // break;
+    // case 1:
+    // nextFiveDays=['Monday','Tuesday','Wednesday','Thursday','Friday'];
+    // break;
+    // case 2:
+    // nextFiveDays=['Monday','Tuesday','Wednesday','Thursday','Friday'];
+    // break;
+    // case 3:
+    // nextFiveDays=['Monday','Tuesday','Wednesday','Thursday','Friday'];
+    // break;
+    // case 4:
+    // nextFiveDays=['Monday','Tuesday','Wednesday','Thursday','Friday'];
+    // break;
+    // case 5:
+    // nextFiveDays=['Monday','Tuesday','Wednesday','Thursday','Friday'];
+    // break;
+    // case 6:
+    // nextFiveDays=['Monday','Tuesday','Wednesday','Thursday','Friday'];
+    // break;
+    // default:
+    // break;
+    // }
+    // }
 
     useEffect(()=>{
         fetchLocation();

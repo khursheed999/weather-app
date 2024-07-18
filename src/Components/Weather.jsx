@@ -2,7 +2,7 @@ import Header from "./UI/Header";
 import React, { useContext, useEffect, useState } from "react";
 import NavigationIcon from '@mui/icons-material/Navigation';
 import LocationonIcon from '@mui/icons-material/LocationOnOutlined';
-import { easeInOut, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Details from "./UI/Details";
 import MoreDetails from "./UI/MoreDetails";
 import FetchDataContext from "../Store/FetchDataContext";
@@ -71,12 +71,13 @@ export default function Weather() {
                             </motion.p>
                         </motion.button>
                     </motion.div>
+                    //displays if toggleMoreDetails is true
                     {toggleMoreDetails && <MoreDetails />}
+                    //footer of this app
                     <motion.div
                     className="footer"
                     >
                         <motion.p>
-
                             CopyRights @2024 All rights reserved
                         </motion.p>
                         <motion.h5>
